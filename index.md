@@ -1,5 +1,5 @@
-# Daftar Postingan
-Kumpulan tulisan terbaru
+# Selamat Datang
+Selamat datang di mystyle.my.id! Yuk, lihat-lihat dulu postingan di bawah ini, mungkin ada yang menarik.
 
 ---
 
@@ -28,5 +28,5 @@ Panduan untuk mempercantik tampilan halaman Markdown agar seperti web profesiona
 ---
 
 <footer align="center">
-<small> Lebih banyak tulisan segera hadir — tetap pantau ya!</small>
+<small> semua usaha pasti butuh proses </small>
 </footer>
