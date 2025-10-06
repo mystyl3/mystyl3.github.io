@@ -1,6 +1,5 @@
 <div align="center">
 
-# mystyle.my.id
 **Selamat datang**
 
 Tempat di mana aku menulis, berbagi, dan bereksperimen dengan ide.
