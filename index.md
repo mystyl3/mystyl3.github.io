@@ -3,9 +3,9 @@ Selamat datang di mystyle.my.id! Yuk, lihat-lihat dulu postingan di bawah ini, m
 
 ---
 
-## [Cara Membuat Situs di Markdown GitHub](cara-buat-situs.md)
- *6 Oktober 2025*  
-Membahas langkah-langkah mudah membuat website dari file `.md` saja, langsung online pakai GitHub Pages. Cocok untuk pemula.
+## [mystyle.my.id/mystory](https://mystyle.my.id/mystory)
+ *11 Okt 2025*  
+“Lucu ya, dulu yang paling deket, sekarang cuma bisa liat story doang.”
 
 ---
 
