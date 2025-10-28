@@ -1,11 +1,16 @@
 ---
 layout: default
-description: "default"
 ---
 <article class="post">
   <h2>{{ page.title }}</h2>
   <p><small>{{ page.date | date: "%d %B %Y" }}</small></p>
-  <div>
-    {{ page.description | default: site.description }}
-  </div>
+  {% if page.description %}
+      <p class="desc">{{ page.description }}</p>
+    {% else %}
+      <p class="desc">{{ site.description }}</p>
+    {% endif %}
+
+    <div class="content">
+      {{ content }}
+    </div>
 </article>
