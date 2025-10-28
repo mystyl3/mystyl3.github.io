@@ -1,0 +1,13 @@
+title: "Mystyle"
+description: "https://mystyle.my.id"
+author: "Mystyle"
+baseurl: "" 
+url: "https://mystyle.my.id"
+markdown: kramdown
+theme: null
+timezone: Asia/Jakarta
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
