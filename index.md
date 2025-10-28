@@ -6,10 +6,8 @@ title: Beranda
 <div class="grid">
   {% for post in site.posts %}
     <div class="card">
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-      <p><small>{{ post.date | date: "%d %B %Y" }}</small></p>
-      <p>{{ post.description }}</p>
-      <p><a href="{{ post.url | relative_url }}">Baca selengkapnya →</a></p>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a> {{ post.date | date: "%d %B %Y" }}</h3>
+      <p><a href="{{ post.url | relative_url }}">{{ post.description }}</a></p>
     </div>
   {% endfor %}
 </div>
