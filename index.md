@@ -1,32 +1,15 @@
-# Selamat Datang
-Selamat datang di mystyle.my.id! Yuk, lihat-lihat dulu postingan di bawah ini, mungkin ada yang menarik.
-
+---
+layout: default
+title: Beranda
 ---
 
-## [mystyle.my.id/mystory](https://mystyle.my.id/mystory)
- *11 Okt 2025*  
-“Lucu ya, dulu yang paling deket, sekarang cuma bisa liat story doang.”
-
----
-
-## [Kata-Kata Motivasi Hari Ini](motivasi.md)
- *5 Oktober 2025*  
-Kumpulan kata-kata penyemangat untuk menemani hari kamu, sederhana tapi menenangkan hati dan pikiran.
-
----
-
-## [Tips Blog Agar Cepat Dikenal](tips-blog.md)
- *3 Oktober 2025*  
-Beberapa strategi ringan agar blog pribadi kamu cepat dikenal orang tanpa harus pasang iklan.
-
----
-
-## [Cara Mengatur Tampilan Markdown di GitHub Pages](markdown-style.md)
- *2 Oktober 2025*  
-Panduan untuk mempercantik tampilan halaman Markdown agar seperti web profesional.
-
----
-
-<footer align="center">
-<small> semua usaha pasti butuh proses </small>
-</footer>
+<div class="grid">
+  {% for post in site.posts %}
+    <div class="card">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p><small>{{ post.date | date: "%d %B %Y" }}</small></p>
+      <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
+      <p><a href="{{ post.url | relative_url }}">Baca selengkapnya →</a></p>
+    </div>
+  {% endfor %}
+</div>
