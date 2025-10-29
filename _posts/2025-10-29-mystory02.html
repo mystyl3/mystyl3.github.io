@@ -1,0 +1,201 @@
+---
+layout: none
+title:  "MyStory 02"
+description: "Cukup dirasakan, tak perlu diceritakan. Ada saatnya kita hanya terdiam dan mencoba menerima kenyataan. So tired of feeling this feeling. Tak perlu memaksa orang lain untuk mengerti dirimu, karena yang peduli pasti akan mengerti."
+date:   2025-10-29
+permalink: /mystory02
+---
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyStory 02</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: "Poppins", sans-serif;
+      overflow: hidden;
+    }
+
+    /* 🌈 Background gradasi animasi */
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      background: linear-gradient(-45deg, #ff0057, #ff9a00, #00c3ff, #8a2be2);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* 📝 Box teks */
+    .text {
+      position: relative;
+      color: #fff;
+      font-size: clamp(1.2rem, 4vw, 2.2rem);
+      font-weight: 600;
+      line-height: 1.4;
+      padding: 1rem 1.5rem;
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+      max-width: 90%;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+      opacity: 0;
+      animation: fadeIn 1s forwards 0.3s;
+      white-space: pre-line;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* ✨ Cursor efek ketik */
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: #fff;
+      margin-left: 3px;
+      animation: blink 0.7s infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* 🔘 Tombol */
+    .btn {
+      margin-top: 40px;
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: none;
+    }
+
+    .btn:hover {
+      background: rgba(255,255,255,0.25);
+      transform: scale(1.05);
+    }
+
+    /* ✨ Musik opsional */
+    audio { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="text" id="typewriter">😎</div>
+    <button class="btn" id="startBtn">Mulai</button>
+    <button class="btn" id="restartBtn">Ulang</button>
+  </div>
+
+  <script>
+    const texts = [
+      "Cukup dirasakan,",
+      "tak perlu diceritakan.",
+      "Ada saatnya kita hanya terdiam dan mencoba menerima kenyataan.",
+      "So tired of feeling this feeling.",
+      "Tak perlu memaksa orang lain untuk mengerti dirimu,",
+      "karena yang peduli pasti akan mengerti.",
+      "😜"
+    ];
+
+    const speed = 60;
+    const delay = 600;
+    const eraseSpeed = 30;
+
+    let i = 0, j = 0;
+    let isDeleting = false;
+    let playing = false;
+
+    const target = document.getElementById("typewriter");
+    const startBtn = document.getElementById("startBtn");
+    const restartBtn = document.getElementById("restartBtn");
+    // const music = document.getElementById("bgMusic");
+
+    // tampilkan tombol mulai
+    startBtn.style.display = "block";
+
+    function typeLoop() {
+      let current = texts[i];
+      let displayed = current.slice(0, j);
+
+      target.innerHTML = displayed + '<span class="cursor"></span>';
+
+      if (!isDeleting && j < current.length) {
+        j++;
+        setTimeout(typeLoop, speed);
+      } 
+      else if (!isDeleting && j === current.length) {
+        if (i < texts.length - 1) {
+          isDeleting = true;
+          setTimeout(typeLoop, delay);
+        } else {
+          // selesai → tampilkan tombol ulang
+          target.innerHTML = current;
+          restartBtn.style.display = "block";
+        }
+      } 
+      else if (isDeleting && j > 0) {
+        j--;
+        setTimeout(typeLoop, eraseSpeed);
+      } 
+      else if (isDeleting && j === 0) {
+        isDeleting = false;
+        i++;
+        setTimeout(typeLoop, speed);
+      }
+    }
+
+    function startTyping() {
+      i = 0; j = 0; isDeleting = false;
+      target.innerHTML = "";
+      restartBtn.style.display = "none";
+      startBtn.style.display = "none";
+
+      // play musik
+      // music.currentTime = 0;
+      // music.play();
+
+      setTimeout(typeLoop, 500);
+    }
+
+    startBtn.addEventListener("click", () => {
+      if (!playing) {
+        playing = true;
+        startTyping();
+      }
+    });
+
+    restartBtn.addEventListener("click", () => {
+      startTyping();
+    });
+  </script>
+</body>
+</html>
