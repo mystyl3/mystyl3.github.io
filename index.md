@@ -1,13 +1,21 @@
 ---
 layout: default
-title: Beranda
+title: "Beranda"
+description: "Selamat datang di blog Wildan Hidayat — berbagi cerita, ide, dan pengalaman menarik."
 ---
+<h1>{{ site.title }}</h1>
+<p>{{ site.description }}</p>
 
-<div class="grid">
+<div class="posts">
   {% for post in site.posts %}
-    <div class="card">
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a> {{ post.date | date: "%d %B %Y" }}</h3>
-      <p><a href="{{ post.url | relative_url }}">{{ post.description }}</a></p>
-    </div>
+    <article>
+      <a href="{{ post.url }}">
+        {% if post.thumbnail %}
+          <img src="{{ post.thumbnail }}" alt="{{ post.title }}">
+        {% endif %}
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.description }}</p>
+      </a>
+    </article>
   {% endfor %}
 </div>
