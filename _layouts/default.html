@@ -8,17 +8,7 @@
   {%- seo -%}
 </head>
 <body>
-  <header>
-    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-    <p>{{ site.description }}</p>
-  </header>
-
-  <main>
-    {{ content }}
-  </main>
-
-  <footer>
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.author }}</p>
-  </footer>
+  <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+  {{ content }}
 </body>
 </html>
