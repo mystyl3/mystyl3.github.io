@@ -7,7 +7,7 @@ description: ss
 <div class="grid">
   {% for post in site.posts %}
     <div class="card">
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }} {{ post.date | date: "%d %B %Y" }}</a></h3>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a> / {{ post.date | date: "%d %B %Y" }}</h3>
       <p>{{ post.description }}</p>
     </div>
   {% endfor %}
