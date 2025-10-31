@@ -12,7 +12,7 @@ theme_color: "#150033"
 # ===============================
 #   📸 GAMBAR & MEDIA DEFAULT
 # ===============================
-default_image: "/assets/css/thumb.png"   # Thumbnail default untuk SEO
+default_image: "https://mystyle.my.id/assets/css/thumb.png"   # Thumbnail default untuk SEO
 
 # ===============================
 #   ⚙️ PENGATURAN SISTEM
@@ -34,8 +34,8 @@ defaults:
       layout: "none"
       author: "Mystyle"
       description: "Postingan menarik dari MyStyle"
-      thumbnail: "/assets/css/thumb.png"
-      image: "/assets/css/thumb.png"
+      thumbnail: "https://mystyle.my.id/assets/css/thumb.png"
+      image: "https://mystyle.my.id/assets/css/thumb.png"
       lang: "id"
       published: true
 
@@ -47,8 +47,8 @@ defaults:
       layout: "default"
       author: "Mystyle"
       description: "Halaman resmi MyStyle"
-      thumbnail: "/assets/css/thumb.png"
-      image: "/assets/css/thumb.png"
+      thumbnail: "https://mystyle.my.id/assets/css/thumb.png"
+      image: "https://mystyle.my.id/assets/css/thumb.png"
       lang: "id"
       published: true
 
