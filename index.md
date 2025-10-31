@@ -1,3 +1,8 @@
+---
+title: "Beranda"
+layout: "default"
+---
+
 <div class="grid">
   {% for post in site.posts %}
     <div class="card">
