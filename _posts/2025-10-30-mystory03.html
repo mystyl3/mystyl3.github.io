@@ -189,10 +189,6 @@ permalink: /mystory03
 
     showQuote(index);
   </script>
-<ul>
-    {% for post in site.posts offset:1 limit:3 %}
-      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-    {% endfor %}
-</ul>
+{% include related.html %}
 </body>
 </html>
