@@ -1,63 +1,79 @@
-title: Mystyle
-description: https://mystyle.my.id
-author: Mystyle
-url: https://mystyle.my.id
-baseurl: "" # Kosongkan kalau di root domain (misal wildanhidayat.com)
-lang: id
-
-default_image: /assets/css/thumb.png
-# twitter_username: wildanhidayat
-theme: null
+# ======================
+# 🔖 Informasi Dasar Situs
+# ======================
+title: "MyStyle"
+description: "https://mystyle.my.id"
+author: "Mystyle"
+url: "https://mystyle.my.id"
+baseurl: "" # kosongkan jika domain utama (bukan subfolder)
+lang: "id"
 theme_color: "#150033"
+default_image: "/assets/css/thumb.png"
 
+# ======================
+# ⚙️ Konfigurasi Jekyll
+# ======================
+markdown: kramdown
+timezone: "Asia/Jakarta"
+permalink: /:title/ # gunakan nama file sebagai URL
+
+# ======================
+# 🧩 Plugin Bawaan GitHub Pages
+# ======================
+plugins:
+  - jekyll-feed       # RSS feed otomatis
+  - jekyll-seo-tag    # Meta tag otomatis (SEO)
+  - jekyll-sitemap    # Sitemap.xml otomatis
+
+# ======================
+# 📦 Pengaturan Default Front Matter
+# ======================
 defaults:
   -
     scope:
       path: "_posts"
       type: "posts"
     values:
-      layout: none
-      title: MyStyle
-      description: https://mystyle.my.id
-      date: 2000-01-10 00:00:00 +0700
-      author: Mystyle
-      thumbnail: /assets/css/thumb.png
-      tags: [mystyle, html, css, js]
+      layout: "none"
+      author: "Mystyle"
+      thumbnail: "/assets/css/thumb.png"
+      description: "Postingan menarik dari MyStyle"
+      tags: ["mystyle", "html", "css", "js"]
+
   -
     scope:
       path: ""
       type: "pages"
     values:
-      layout: default
-      title: MyStyle
-      description: https://mystyle.my.id
-      author: Mystyle
-      thumbnail: /assets/css/thumb.png
-      tags: [mystyle, html, css, js]
+      layout: "default"
+      author: "Mystyle"
+      thumbnail: "/assets/css/thumb.png"
+      description: "Halaman MyStyle"
+      tags: ["mystyle", "html", "css", "js"]
 
-markdown: kramdown
-permalink: /mystyle
-timezone: Asia/Jakarta
+# ======================
+# 🚫 File/Foler yang Dikecualikan dari Build
+# ======================
+exclude:
+  - README.md
+  - node_modules/
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - vendor/
 
-plugins:
-  - jekyll-feed     # Buat RSS feed otomatis
-  - jekyll-seo-tag  # Tambahan SEO meta otomatis (kalau mau)
-  - jekyll-sitemap
+# ======================
+# 📂 Folder Tambahan yang Disertakan
+# ======================
+include:
+  - _pages
+  - _posts
 
-# exclude:
-#  - README.md
-#  - node_modules/
-#  - package.json
-#  - package-lock.json
-#  - Gemfile
-#  - Gemfile.lock
-#  - vendor/
-
-# include:
-#  - _pages
-#  - _posts
-
-# social:
-#  instagram: wildan.hidayat
-#  tiktok: wildanhidayat
-#  github: wildanhidayat
+# ======================
+# 🔗 Sosial Media (optional)
+# ======================
+social:
+  instagram: "wildan.hidayat"
+  tiktok: "wildanhidayat"
+  github: "mystyl3"
