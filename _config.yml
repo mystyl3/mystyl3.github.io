@@ -19,23 +19,23 @@ plugins:
 defaults:
   - scope:
       path: "_posts"
-#      type: "posts"
+      type: "posts"
     values:
       layout: "none"
       author: "Mystyle"
       thumbnail: "/assets/css/thumb.png"
       description: "Postingan menarik dari MyStyle"
-      tags: ["mystyle", "html", "css", "js"]
+      #tags: ["mystyle", "html", "css", "js"]
 
   - scope:
       path: ""
-#      type: "pages"
+      type: "pages"
     values:
       layout: "default"
       author: "Mystyle"
       thumbnail: "/assets/css/thumb.png"
       description: "Halaman MyStyle"
-      tags: ["mystyle", "html", "css", "js"]
+      #tags: ["mystyle", "html", "css", "js"]
 
 #exclude:
 #  - README.md
