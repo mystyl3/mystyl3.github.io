@@ -1,36 +1,23 @@
-# ======================
-# 🔖 Informasi Dasar Situs
-# ======================
 title: "MyStyle"
 description: "https://mystyle.my.id"
 author: "Mystyle"
 url: "https://mystyle.my.id"
-baseurl: "" # kosongkan jika domain utama (bukan subfolder)
+baseurl: ""
 lang: "id"
 theme_color: "#150033"
 default_image: "/assets/css/thumb.png"
 
-# ======================
-# ⚙️ Konfigurasi Jekyll
-# ======================
 markdown: kramdown
 timezone: "Asia/Jakarta"
-permalink: /:title/ # gunakan nama file sebagai URL
+permalink: "/:title/"
 
-# ======================
-# 🧩 Plugin Bawaan GitHub Pages
-# ======================
 plugins:
-  - jekyll-feed       # RSS feed otomatis
-  - jekyll-seo-tag    # Meta tag otomatis (SEO)
-  - jekyll-sitemap    # Sitemap.xml otomatis
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
-# ======================
-# 📦 Pengaturan Default Front Matter
-# ======================
 defaults:
-  -
-    scope:
+  - scope:
       path: "_posts"
       type: "posts"
     values:
@@ -40,8 +27,7 @@ defaults:
       description: "Postingan menarik dari MyStyle"
       tags: ["mystyle", "html", "css", "js"]
 
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
@@ -51,29 +37,15 @@ defaults:
       description: "Halaman MyStyle"
       tags: ["mystyle", "html", "css", "js"]
 
-# ======================
-# 🚫 File/Foler yang Dikecualikan dari Build
-# ======================
-exclude:
-  - README.md
-  - node_modules/
-  - Gemfile
-  - Gemfile.lock
-  - package.json
-  - package-lock.json
-  - vendor/
+#exclude:
+#  - README.md
+#  - node_modules/
+#  - Gemfile
+#  - Gemfile.lock
+#  - package.json
+#  - package-lock.json
+#  - vendor/
 
-# ======================
-# 📂 Folder Tambahan yang Disertakan
-# ======================
-include:
-  - _pages
-  - _posts
-
-# ======================
-# 🔗 Sosial Media (optional)
-# ======================
-social:
-  instagram: "wildan.hidayat"
-  tiktok: "wildanhidayat"
-  github: "mystyl3"
+#include:
+#  - _pages
+#  - _posts
