@@ -1,0 +1,220 @@
+---
+layout: none
+title: "My Lovers"
+description: "Mauku cuma kamu."
+date: 2025-10-31 06:00:00 +0700
+permalink: /mylovers
+---
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  {% include head.html %}
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* === BODY STYLING === */
+  body {
+    height: 100vh;
+    width: 100vw;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden; /* Supaya gak bisa scroll */
+    background: radial-gradient(circle at center, #0b0715 0%, #120a1f 70%, #08050e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* === BACKGROUND AURORA === */
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      from 0deg,
+      #ffd6a5,
+      #ffc6ff,
+      #bdb2ff,
+      #9bf6ff,
+      #fffffc,
+      #ffafcc,
+      #ffe29f,
+      #ffd6a5
+    );
+    animation: rotateBG 25s linear infinite;
+    opacity: 0.18;
+    filter: blur(120px);
+    z-index: 0;
+  }
+
+  @keyframes rotateBG {
+    to { transform: rotate(360deg); }
+  }
+
+  /* === FLOATING PARTICLES === */
+  .particle {
+    position: fixed;
+    background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: float 12s infinite ease-in-out;
+    pointer-events: none;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0) scale(1); opacity: 0.7; }
+    50% { transform: translateY(-50px) scale(1.2); opacity: 1; }
+    100% { transform: translateY(0) scale(1); opacity: 0.7; }
+  }
+
+  /* === MAIN CONTAINER === */
+  .container {
+    position: fixed; /* Tetap di tengah walau layar digeser */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px 10px 20px;
+    border-radius: 35px;
+    background: rgba(30, 20, 50, 0.75);
+    backdrop-filter: blur(18px);
+    border: 2px solid rgba(255, 215, 150, 0.4);
+    box-shadow: 0 0 45px rgba(255, 190, 150, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.08);
+    max-width: 90%;
+    width: 430px;
+    z-index: 3;
+    animation: fadeIn 1.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -48%) scale(0.95); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  }
+
+  /* === BORDER EFFECT === */
+  .border-glow {
+    position: absolute;
+    inset: -3px;
+    border-radius: 38px;
+    background: linear-gradient(120deg,
+      #ffd6a5, #ffc6ff, #bdb2ff, #9bf6ff, #fffffc, #ffafcc, #ffe29f, #ffd6a5
+    );
+    background-size: 600% 600%;
+    animation: borderFlow 24s linear infinite, pulse 16s ease-in-out infinite alternate;
+    filter: blur(8px);
+    opacity: 0.9;
+    z-index: -1;
+  }
+
+  @keyframes borderFlow {
+    to { background-position: 600% center; }
+  }
+
+  @keyframes pulse {
+    from { transform: scale(1); opacity: 0.7; }
+    to { transform: scale(1.05); opacity: 1; }
+  }
+
+  /* === TITLE === */
+  h1 {
+    font-family: "Sacramento", cursive;
+    font-size: clamp(35px, 10vw, 70px);
+    font-weight: 400;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #ffe29f, #ffd6a5, #ffafcc, #ffc6ff, #bdb2ff, #9bf6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% auto;
+    animation: shimmer 5s linear infinite;
+    text-shadow: 0 0 25px rgba(255, 200, 180, 0.3);
+  }
+
+  @keyframes shimmer {
+    to { background-position: 300% center; }
+  }
+
+  /* === LYRIC === */
+  .lyric {
+    font-size: clamp();
+    font-weight: 600;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #fff6e3, #ffe29f, #ffafcc, #ffc6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+  b {
+    font-size: clamp(20px, 5vw, 28px);
+    background: linear-gradient(90deg, #fff6e3, #ffe29f, #ffafcc, #ffc6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 10px rgba(255, 230, 200, 0.3); }
+    to { text-shadow: 0 0 30px rgba(255, 190, 180, 0.9); }
+  }
+
+  /* === PARAGRAPH === */
+  p {
+    overflow-y: auto;
+    max-height: 45vh;
+    margin-top: 15px;
+    font-size: clamp(15px, 3.5vw, 18px);
+    color: rgba(255, 255, 255, 0.93);
+    line-height: 1.7;
+    text-shadow: 0 0 15px rgba(255, 220, 200, 0.25);
+  }
+
+  /* === FOOTER === */
+  footer {
+    margin-top: 30px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+  <div class="background"></div>
+
+  <!-- Partikel kilau lembut -->
+  <div class="particle" style="width:14px; height:14px; top:25%; left:15%; animation-delay: 0s;"></div>
+  <div class="particle" style="width:9px; height:9px; top:60%; left:30%; animation-delay: 2s;"></div>
+  <div class="particle" style="width:12px; height:12px; top:40%; left:70%; animation-delay: 4s;"></div>
+  <div class="particle" style="width:18px; height:18px; top:75%; left:55%; animation-delay: 6s;"></div>
+  <div class="particle" style="width:10px; height:10px; top:15%; left:85%; animation-delay: 8s;"></div>
+
+  <!-- Konten utama -->
+  <div class="container">
+    <div class="border-glow"></div>
+    <h1>💛 My Lovers 💛</h1>
+    <div class="lyric">MARIATON 💛 WILDAN</div>
+    <p>
+      <b>M</b>auku cuma kamu.
+      <b>A</b>ku gak butuh yang lain.
+      <b>R</b>asa ini udah cukup buktiin.
+      <b>I</b>ya, cuma kamu yang aku pengenin.
+      <b>A</b>ku cinta diam-diam, tapi dalam.
+      <b>T</b>iap hari mikirin kamu aja.
+      <b>O</b>h, senyummu candu.
+      <b>N</b>yata, aku jatuh — ke kamu.
+      <b>W</b>alau aku gak pandai merangkai kata,
+      <b>I</b>zinkan aku jujur dari hati,
+      <b>L</b>ebih dari sekadar suka — aku benar-benar sayang.
+      <b>D</b>i setiap doa malamku, namamu selalu kusebut,
+      <b>A</b>gar kamu tahu, rasa ini tulus tanpa alasan.
+      <b>N</b>gerti gak? kamu udah jadi rumah di pikiranku.
+    </p>
+    <footer>Tapi nanti kamu yang di rumahku. hihi</footer>
+  </div>
+</body>
+</html>
