@@ -5,7 +5,7 @@ url: https://mystyle.my.id
 baseurl: "" # Kosongkan kalau di root domain (misal wildanhidayat.com)
 lang: id
 
-default_image: /assets/thumb.png
+default_image: /assets/css/thumb.png
 # twitter_username: wildanhidayat
 theme: null
 theme_color: "#150033"
@@ -16,20 +16,27 @@ defaults:
       path: "_posts"
       type: "posts"
     values:
-      layout: post
+      layout: none
+      title: MyStyle
+      description: https://mystyle.my.id
+      date: 2000-01-10 00:00:00 +0700
       author: Mystyle
-      thumbnail: /assets/thumb.png
+      thumbnail: /assets/css/thumb.png
+      tags: [mystyle, html, css, js]
   -
     scope:
       path: ""
-      type: "default"
+      type: "pages"
     values:
       layout: default
+      title: MyStyle
+      description: https://mystyle.my.id
       author: Mystyle
-      thumbnail: /assets/thumb.png
+      thumbnail: /assets/css/thumb.png
+      tags: [mystyle, html, css, js]
 
 markdown: kramdown
-permalink: /default
+permalink: /mystyle
 timezone: Asia/Jakarta
 
 plugins:
