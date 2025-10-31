@@ -16,26 +16,26 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-#defaults:
-#  - scope:
-#      path: "_posts"
+defaults:
+  - scope:
+      path: "_posts"
 #      type: "posts"
-#    values:
-#      layout: "none"
-#      author: "Mystyle"
-#      thumbnail: "/assets/css/thumb.png"
-#      description: "Postingan menarik dari MyStyle"
-#      tags: ["mystyle", "html", "css", "js"]
+    values:
+      layout: "none"
+      author: "Mystyle"
+      thumbnail: "/assets/css/thumb.png"
+      description: "Postingan menarik dari MyStyle"
+      tags: ["mystyle", "html", "css", "js"]
 
-#  - scope:
-#      path: ""
+  - scope:
+      path: ""
 #      type: "pages"
-#    values:
-#      layout: "default"
-#      author: "Mystyle"
-#      thumbnail: "/assets/css/thumb.png"
-#      description: "Halaman MyStyle"
-#      tags: ["mystyle", "html", "css", "js"]
+    values:
+      layout: "default"
+      author: "Mystyle"
+      thumbnail: "/assets/css/thumb.png"
+      description: "Halaman MyStyle"
+      tags: ["mystyle", "html", "css", "js"]
 
 #exclude:
 #  - README.md
