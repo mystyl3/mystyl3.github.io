@@ -1,9 +1,3 @@
----
-layout: default
-title: Beranda
-description: ss
----
-
 <div class="grid">
   {% for post in site.posts %}
     <div class="card">
