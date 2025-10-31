@@ -1,13 +1,56 @@
-title: "Mystyle"
-description: "https://mystyle.my.id"
-author: "Mystyle"
-baseurl: "" 
-url: "https://mystyle.my.id"
-markdown: kramdown
+title: Mystyle
+description: https://mystyle.my.id
+author: Mystyle
+url: https://mystyle.my.id
+baseurl: "" # Kosongkan kalau di root domain (misal wildanhidayat.com)
+lang: id
+
+default_image: /assets/thumb.png
+# twitter_username: wildanhidayat
 theme: null
+theme_color: "#150033"
+
+defaults:
+  -
+    scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: post
+      author: Mystyle
+      thumbnail: /assets/thumb.png
+  -
+    scope:
+      path: ""
+      type: "default"
+    values:
+      layout: default
+      author: Mystyle
+      thumbnail: /assets/thumb.png
+
+markdown: kramdown
+permalink: /default
 timezone: Asia/Jakarta
 
 plugins:
-  - jekyll-seo-tag
+  - jekyll-feed     # Buat RSS feed otomatis
+  - jekyll-seo-tag  # Tambahan SEO meta otomatis (kalau mau)
   - jekyll-sitemap
-  - jekyll-feed
+
+# exclude:
+#  - README.md
+#  - node_modules/
+#  - package.json
+#  - package-lock.json
+#  - Gemfile
+#  - Gemfile.lock
+#  - vendor/
+
+# include:
+#  - _pages
+#  - _posts
+
+# social:
+#  instagram: wildan.hidayat
+#  tiktok: wildanhidayat
+#  github: wildanhidayat
