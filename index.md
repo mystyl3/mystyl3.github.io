@@ -1,6 +1,7 @@
 ---
 title: "Beranda"
 layout: "default"
+date: 2025-10-31 06:00:00 +0700
 ---
 
 <div class="grid">
