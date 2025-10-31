@@ -1,51 +1,81 @@
+# ===============================
+#   🔧 PENGATURAN DASAR SITUS
+# ===============================
 title: "MyStyle"
-description: "https://mystyle.my.id"
+description: "Kumpulan artikel dan karya dari MyStyle — seputar HTML, CSS, dan kreativitas web."
 author: "Mystyle"
 url: "https://mystyle.my.id"
-baseurl: ""
+baseurl: ""        # Kosongkan kalau di root domain
 lang: "id"
-#theme_color: "#150033"
-default_image: "/assets/css/thumb.png"
+theme_color: "#150033"
 
+# ===============================
+#   📸 GAMBAR & MEDIA DEFAULT
+# ===============================
+default_image: "/assets/css/thumb.png"   # Thumbnail default untuk SEO
+
+# ===============================
+#   ⚙️ PENGATURAN SISTEM
+# ===============================
 markdown: kramdown
-timezone: "Asia/Jakarta"
-permalink: "/:title/"
+permalink: /:title/
+timezone: Asia/Jakarta
+theme: null   # Tidak pakai tema bawaan
 
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-
+# ===============================
+#   🧩 DEFAULT FRONT MATTER
+# ===============================
 defaults:
+  # Untuk semua postingan di _posts/
   - scope:
       path: "_posts"
       type: "posts"
     values:
       layout: "none"
       author: "Mystyle"
-      thumbnail: "/assets/css/thumb.png"
       description: "Postingan menarik dari MyStyle"
-      #tags: ["mystyle", "html", "css", "js"]
+      thumbnail: "/assets/css/thumb.png"
+      image: "/assets/css/thumb.png"
+      lang: "id"
+      published: true
 
+  # Untuk halaman biasa (index, about, dsb.)
   - scope:
       path: ""
       type: "pages"
     values:
       layout: "default"
       author: "Mystyle"
+      description: "Halaman resmi MyStyle"
       thumbnail: "/assets/css/thumb.png"
-      description: "Halaman MyStyle"
-      #tags: ["mystyle", "html", "css", "js"]
+      image: "/assets/css/thumb.png"
+      lang: "id"
+      published: true
 
-#exclude:
-#  - README.md
-#  - node_modules/
-#  - Gemfile
-#  - Gemfile.lock
-#  - package.json
-#  - package-lock.json
-#  - vendor/
+# ===============================
+#   🔍 PLUGINS (SEO, FEED, DLL)
+# ===============================
+plugins:
+  - jekyll-feed       # Buat RSS feed otomatis
+  - jekyll-sitemap    # Sitemap untuk SEO
+  - jekyll-seo-tag    # Meta tag otomatis (title, og:image, dsb.)
 
-#include:
-#  - _pages
-#  - _posts
+# ===============================
+#   🚫 FILE YANG DIABAIKAN
+# ===============================
+exclude:
+  - README.md
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+
+# ===============================
+#   🌐 SOSIAL MEDIA (opsional)
+# ===============================
+social:
+  instagram: "wildan.hidayat"
+  tiktok: "wildanhidayat"
+  github: "mystyl3"
