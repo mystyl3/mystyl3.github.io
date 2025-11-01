@@ -12,33 +12,34 @@ permalink: /mylovers
 <head>
   {% include head.html %}
 <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  /* === BODY STYLING === */
-  body {
-    height: 100vh;
-    width: 100vw;
-    font-family: "Poppins", sans-serif;
-    overflow: hidden; /* Supaya gak bisa scroll */
-    background: radial-gradient(circle at center, #0b0715 0%, #120a1f 70%, #08050e 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    /* === BODY STYLING === */
+    body {
+      height: 100vh;
+      width: 100vw;
+      font-family: "Poppins", sans-serif;
+      overflow: hidden;
+      /* Supaya gak bisa scroll */
+      background: radial-gradient(circle at center, #0b0715 0%, #120a1f 70%, #08050e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  /* === BACKGROUND AURORA === */
-  .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(
+    /* === BACKGROUND AURORA === */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
       from 0deg,
       #ffd6a5,
       #ffc6ff,
@@ -48,141 +49,210 @@ permalink: /mylovers
       #ffafcc,
       #ffe29f,
       #ffd6a5
-    );
-    animation: rotateBG 25s linear infinite;
-    opacity: 0.18;
-    filter: blur(120px);
-    z-index: 0;
-  }
+      );
+      animation: rotateBG 25s linear infinite;
+      opacity: 0.18;
+      filter: blur(120px);
+      z-index: 0;
+    }
 
-  @keyframes rotateBG {
-    to { transform: rotate(360deg); }
-  }
+    @keyframes rotateBG {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
-  /* === FLOATING PARTICLES === */
-  .particle {
-    position: fixed;
-    background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, transparent 70%);
-    border-radius: 50%;
-    opacity: 0.7;
-    animation: float 12s infinite ease-in-out;
-    pointer-events: none;
-  }
+    /* === FLOATING PARTICLES === */
+    .particle {
+      position: fixed;
+      background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, transparent 70%);
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: float 12s infinite ease-in-out;
+      pointer-events: none;
+    }
 
-  @keyframes float {
-    0% { transform: translateY(0) scale(1); opacity: 0.7; }
-    50% { transform: translateY(-50px) scale(1.2); opacity: 1; }
-    100% { transform: translateY(0) scale(1); opacity: 0.7; }
-  }
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+      }
+      50% {
+        transform: translateY(-50px) scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+      }
+    }
 
-  /* === MAIN CONTAINER === */
-  .container {
-    position: fixed; /* Tetap di tengah walau layar digeser */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    padding: 20px 10px 20px;
-    border-radius: 35px;
-    background: rgba(30, 20, 50, 0.75);
-    backdrop-filter: blur(18px);
-    border: 2px solid rgba(255, 215, 150, 0.4);
-    box-shadow: 0 0 45px rgba(255, 190, 150, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.08);
-    max-width: 90%;
-    width: 430px;
-    z-index: 3;
-    animation: fadeIn 1.3s ease;
-  }
+    /* === MAIN CONTAINER === */
+    .container {
+      position: fixed;
+      /* Tetap di tengah walau layar digeser */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      padding: 20px 10px 20px;
+      border-radius: 35px;
+      background: rgba(30, 20, 50, 0.75);
+      backdrop-filter: blur(18px);
+      border: 2px solid rgba(255, 215, 150, 0.4);
+      box-shadow: 0 0 45px rgba(255, 190, 150, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.08);
+      max-width: 90%;
+      width: 430px;
+      z-index: 3;
+      animation: fadeIn 1.3s ease;
+    }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translate(-50%, -48%) scale(0.95); }
-    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -48%) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
 
-  /* === BORDER EFFECT === */
-  .border-glow {
-    position: absolute;
-    inset: -3px;
-    border-radius: 38px;
-    background: linear-gradient(120deg,
+    /* === BORDER EFFECT === */
+    .border-glow {
+      position: absolute;
+      inset: -3px;
+      border-radius: 38px;
+      background: linear-gradient(120deg,
       #ffd6a5, #ffc6ff, #bdb2ff, #9bf6ff, #fffffc, #ffafcc, #ffe29f, #ffd6a5
-    );
-    background-size: 600% 600%;
-    animation: borderFlow 24s linear infinite, pulse 16s ease-in-out infinite alternate;
-    filter: blur(8px);
-    opacity: 0.9;
-    z-index: -1;
-  }
+      );
+      background-size: 600% 600%;
+      animation: borderFlow 24s linear infinite, pulse 16s ease-in-out infinite alternate;
+      filter: blur(8px);
+      opacity: 0.9;
+      z-index: -1;
+    }
 
-  @keyframes borderFlow {
-    to { background-position: 600% center; }
-  }
+    @keyframes borderFlow {
+      to {
+        background-position: 600% center;
+      }
+    }
 
-  @keyframes pulse {
-    from { transform: scale(1); opacity: 0.7; }
-    to { transform: scale(1.05); opacity: 1; }
-  }
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+      to {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+    }
 
-  /* === TITLE === */
-  h1 {
-    font-family: "Sacramento", cursive;
-    font-size: clamp(35px, 10vw, 70px);
-    font-weight: 400;
-    margin-bottom: 15px;
-    background: linear-gradient(90deg, #ffe29f, #ffd6a5, #ffafcc, #ffc6ff, #bdb2ff, #9bf6ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 300% auto;
-    animation: shimmer 5s linear infinite;
-    text-shadow: 0 0 25px rgba(255, 200, 180, 0.3);
-  }
+    /* === TITLE === */
+    h1 {
+      font-family: "Sacramento", cursive;
+      font-size: clamp(35px, 10vw, 70px);
+      font-weight: 400;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #ffe29f, #ffd6a5, #ffafcc, #ffc6ff, #bdb2ff, #9bf6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 300% auto;
+      animation: shimmer 5s linear infinite;
+      text-shadow: 0 0 25px rgba(255, 200, 180, 0.3);
+    }
 
-  @keyframes shimmer {
-    to { background-position: 300% center; }
-  }
+    @keyframes shimmer {
+      to {
+        background-position: 300% center;
+      }
+    }
 
-  /* === LYRIC === */
-  .lyric {
-    font-size: clamp();
-    font-weight: 600;
-    margin-top: 20px;
-    background: linear-gradient(90deg, #fff6e3, #ffe29f, #ffafcc, #ffc6ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: glow 3s ease-in-out infinite alternate;
-  }
-  b {
-    font-size: clamp(20px, 5vw, 28px);
-    background: linear-gradient(90deg, #fff6e3, #ffe29f, #ffafcc, #ffc6ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: glow 3s ease-in-out infinite alternate;
-  }
+    /* === LYRIC === */
+    .lyric {
+      font-size: clamp();
+      font-weight: 600;
+      margin-top: 20px;
+      background: linear-gradient(90deg, #fff6e3, #ffe29f, #ffafcc, #ffc6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+    b {
+      font-size: clamp(20px, 5vw, 28px);
+      background: linear-gradient(90deg, #fff6e3, #ffe29f, #ffafcc, #ffc6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
 
-  @keyframes glow {
-    from { text-shadow: 0 0 10px rgba(255, 230, 200, 0.3); }
-    to { text-shadow: 0 0 30px rgba(255, 190, 180, 0.9); }
-  }
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px rgba(255, 230, 200, 0.3);
+      }
+      to {
+        text-shadow: 0 0 30px rgba(255, 190, 180, 0.9);
+      }
+    }
 
-  /* === PARAGRAPH === */
-  p {
-    overflow-y: auto;
-    max-height: 45vh;
-    margin-top: 15px;
-    font-size: clamp(15px, 3.5vw, 18px);
-    color: rgba(255, 255, 255, 0.93);
-    line-height: 1.7;
-    text-shadow: 0 0 15px rgba(255, 220, 200, 0.25);
-  }
+    /* === PARAGRAPH === */
+    p {
+      overflow-y: auto;
+      max-height: 45vh;
+      margin-top: 15px;
+      font-size: clamp(15px, 3.5vw, 18px);
+      color: rgba(255, 255, 255, 0.93);
+      line-height: 1.7;
+      text-shadow: 0 0 15px rgba(255, 220, 200, 0.25);
+    }
 
-  /* === FOOTER === */
-  footer {
-    margin-top: 30px;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.7);
-    letter-spacing: 1px;
-  }
-</style>
+    /* === FOOTER === */
+    footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 1px;
+    }
+
+    .nav-buttons {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      /* kiri dan kanan */
+      align-items: center;
+      width: 100%;
+    }
+
+    .nav-buttons button {
+      padding: 10px 20px;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(90deg, #ffafcc, #bdb2ff);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(255, 200, 230, 0.3);
+    }
+
+    .nav-buttons button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 220, 240, 0.6);
+    }
+
+    p img {
+      float: left;
+      width: 40%;
+      margin-right: 3px;
+      /* jarak teks dari foto */
+      border-radius: 10px;
+      /* biar lembut */
+    }
+  </style>
 </head>
 <body>
   <div class="background"></div>
@@ -198,8 +268,22 @@ permalink: /mylovers
   <div class="container">
     <div class="border-glow"></div>
     <h1>💛 My Lovers 💛</h1>
-    <div class="lyric">MARIATON 💛 WILDAN</div>
-    <p>
+    <div class="lyric">
+      MARIATON 💛 WILDAN
+    </div>
+    <p></p>
+    <footer></footer>
+    <div class="nav-buttons">
+      <button onclick="goPrev()">Prev</button>
+      <button onclick="goNext()">Next</button>
+    </div>
+  </div>
+
+  <script>
+    const pages = [{
+      title: "💛 My Lovers 💛",
+      lyric: "MARIATON 💛 WILDAN",
+      content: `
       <b>M</b>auku cuma kamu.
       <b>A</b>ku gak butuh yang lain.
       <b>R</b>asa ini udah cukup buktiin.
@@ -214,8 +298,54 @@ permalink: /mylovers
       <b>D</b>i setiap doa malamku, namamu selalu kusebut,
       <b>A</b>gar kamu tahu, rasa ini tulus tanpa alasan.
       <b>N</b>gerti gak? kamu udah jadi rumah di pikiranku.
-    </p>
-    <footer>Tapi nanti kamu yang di rumahku. hihi</footer>
-  </div>
+      <br><br>2025-10-31
+      `,
+      footer: "Tapi nanti kamu yang di rumahku. hihi"
+    },
+      {
+        title: "💜 HatiKu 💜",
+        lyric: "Wanita Terbaik",
+        content: `
+        <img src="https://mystyle.my.id/assets/css/2025-11-01.jpg" width="50%">
+        Ini tentang wanita terbaikku — yang selalu kutunggu setiap kali dia pulang dari pesantren.
+        Rasanya sulit diungkapkan dengan kata-kata. Aku selalu menunggu chat darinya, bahkan berharap dia marahin aku.
+        Entah kenapa, saat dia marah, justru ada rasa senang yang gak bisa dijelasin. Aneh, ya?
+        Padahal jelas-jelas aku dimarahin, tapi aku malah bahagia.
+        Dia sering bilang aku gak peka, jahat, dan gak ngertiin dia. Tapi aku tahu, di balik itu semua, dia cuma butuh perhatian dariku.
+        Makanya, aku malah senang waktu dia begitu. Hihi~
+        Andaikan aku bisa lihat dia marah langsung di depan mataku...
+        Pasti rasanya bahagia banget.
+        Aku pengen lihat wajah marahnya, senyumnya, kesalnya, tangisnya, bahkan malunya — semuanya.
+        Aku pengen sedekat itu.
+        Diam, menatap matanya sampai dia berhenti bicara dan berkata pelan,
+        “Kenapa, sayang?”
+
+        <br><br>2025-11-01
+        `,
+        footer: "Semoga kamu tahu seberapa dalam rinduku."
+      }];
+
+    let currentPage = 0;
+
+    function renderPage() {
+      const page = pages[currentPage];
+      document.querySelector("h1").innerHTML = page.title;
+      document.querySelector(".lyric").innerHTML = page.lyric;
+      document.querySelector("p").innerHTML = page.content;
+      document.querySelector("footer").innerHTML = page.footer;
+    }
+
+    function goNext() {
+      currentPage = (currentPage + 1) % pages.length;
+      renderPage();
+    }
+
+    function goPrev() {
+      currentPage = (currentPage - 1 + pages.length) % pages.length;
+      renderPage();
+    }
+
+    renderPage();
+  </script>
 </body>
 </html>
