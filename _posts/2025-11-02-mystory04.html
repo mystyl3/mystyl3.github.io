@@ -1,0 +1,289 @@
+---
+layout: none
+title: "MyStory 04"
+description: "Ini alasanku suka telponan cantik?"
+date: 2025-11-02 06:00:00 +0700
+permalink: /mystory04
+---
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  {% include head.html %}
+<!-- 💨 Preload gambar dan musik -->
+<link rel="preload" as="image" href="https://mystyle.my.id/assets/css/20251102a.jpg">
+<link rel="preload" as="image" href="https://mystyle.my.id/assets/css/20251102b.jpg">
+<link rel="preload" as="audio" href="https://mystyle.my.id/assets/css/orangyangsalah.mp3" type="audio/mpeg">
+
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background:#000;
+    font-family:'Poppins', sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+  }
+
+  .slider {
+    position:relative;
+    width:100%;
+    max-width:600px;
+    overflow:hidden;
+    background:#000;
+    border-radius:18px;
+    user-select:none;
+    touch-action:pan-y;
+  }
+
+  .slides {
+    display:flex;
+    transition:transform 0.4s cubic-bezier(.22,.61,.36,1);
+  }
+
+  .slide {
+    flex:0 0 100%;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+  }
+
+  .slide img {
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    display:block;
+    background:#111;
+  }
+
+  .caption {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:#fff;
+    font-size:2.1em;
+    opacity: 0.2;
+    font-weight:500;
+    text-align:center;
+    padding:8px 18px;
+    border-radius:20px;
+    background:rgba(0,0,0,1);
+    backdrop-filter:blur(5px);
+  }
+
+  .dots {
+    position:absolute;
+    bottom:14px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:6px;
+    z-index:2;
+  }
+
+  .dots span {
+    width:8px;
+    height:8px;
+    background:rgba(255,255,255,0.35);
+    border-radius:50%;
+    transition:all .25s ease;
+  }
+
+  .dots .active {
+    background:#fff;
+    width:18px;
+    border-radius:10px;
+  }
+
+  .gradient-bottom {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:80px;
+    background:linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  }
+
+  /* 🎧 ikon musik */
+  #musicIcon {
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:40px;
+    height:40px;
+    background:rgba(255,255,255,0.15);
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:20px;
+    backdrop-filter:blur(4px);
+    cursor:pointer;
+    z-index:10;
+    transition:opacity 0.3s ease;
+  }
+</style>
+</head>
+<body>
+
+<div class="slider">
+  <div class="slides">
+    
+    <div class="slide">
+      <img src="https://mystyle.my.id/assets/css/20251102a.jpg" loading="eager" alt="">
+      <div class="caption">mystyle.my.id</div>
+      <div class="gradient-bottom"></div>
+    </div>
+    
+    <div class="slide">
+      <img src="https://mystyle.my.id/assets/css/20251102b.jpg" loading="lazy" alt="">
+      <div class="caption">mystyle.my.id</div>
+      <div class="gradient-bottom"></div>
+    </div>
+    
+  </div>
+  <div class="dots"></div>
+</div>
+
+<!-- 🎵 Musik -->
+<audio id="bgm" preload="auto" loop>
+  <source src="https://mystyle.my.id/assets/css/orangyangsalah.mp3" type="audio/mpeg">
+</audio>
+
+<div id="musicIcon">🎵</div>
+
+<script>
+const slides = document.querySelector('.slides');
+const allSlides = document.querySelectorAll('.slide');
+const dotsContainer = document.querySelector('.dots');
+const music = document.getElementById('bgm');
+const musicIcon = document.getElementById('musicIcon');
+
+let index = 0;
+let startX = 0, currentX = 0, diff = 0, isDragging = false;
+let prevTranslate = 0;
+let canSwipe = true; // 🕒 pengaman swipe cooldown
+
+// buat dots
+allSlides.forEach((_, i) => {
+  const dot = document.createElement('span');
+  dot.onclick = () => goTo(i);
+  dotsContainer.append(dot);
+});
+const dots = dotsContainer.querySelectorAll('span');
+
+function goTo(i) {
+  if (!canSwipe) return; // ⛔ jangan geser kalau masih cooldown
+  index = i;
+  setPosition(true);
+  handleMusic();
+  triggerCooldown();
+}
+
+function setPosition(withAnim = true) {
+  const translateX = -index * slides.clientWidth;
+  slides.style.transition = withAnim ? 'transform .35s cubic-bezier(.22,.61,.36,1)' : 'none';
+  slides.style.transform = `translateX(${translateX}px)`;
+  prevTranslate = translateX;
+  dots.forEach(d => d.classList.remove('active'));
+  dots[index].classList.add('active');
+}
+
+// 🎵 Fade in/out musik
+let fadeInterval;
+function fadeAudio(targetVolume, duration = 800) {
+  clearInterval(fadeInterval);
+  const step = 0.05 * (targetVolume > music.volume ? 1 : -1);
+  fadeInterval = setInterval(() => {
+    music.volume = Math.min(1, Math.max(0, music.volume + step));
+    if ((step > 0 && music.volume >= targetVolume) || (step < 0 && music.volume <= targetVolume)) {
+      clearInterval(fadeInterval);
+    }
+  }, duration / 20);
+}
+
+function handleMusic() {
+  if (index > 0) {
+    if (music.paused) {
+      music.play().catch(()=>{});
+      music.volume = 0;
+      fadeAudio(0.6);
+    }
+    musicIcon.style.opacity = "1";
+  } else {
+    fadeAudio(0);
+    setTimeout(() => { music.pause(); }, 800);
+    musicIcon.style.opacity = "0.5";
+  }
+}
+
+// Geser sentuh
+function start(e){
+  if (!canSwipe) return; // 🚫 blok selama cooldown
+  isDragging = true;
+  startX = e.touches ? e.touches[0].clientX : e.clientX;
+  slides.style.transition = 'none';
+}
+
+function move(e){
+  if (!isDragging || !canSwipe) return;
+  currentX = e.touches ? e.touches[0].clientX : e.clientX;
+  diff = currentX - startX;
+  if ((index === 0 && diff > 0) || (index === allSlides.length - 1 && diff < 0)) return;
+  slides.style.transform = `translateX(${prevTranslate + diff}px)`;
+}
+
+function end(){
+  if (!isDragging || !canSwipe) return;
+  isDragging = false;
+  slides.style.transition = 'transform .35s cubic-bezier(.22,.61,.36,1)';
+  if (Math.abs(diff) > slides.clientWidth / 4) {
+    if (diff < 0 && index < allSlides.length - 1) index++;
+    else if (diff > 0 && index > 0) index--;
+  }
+  setPosition();
+  handleMusic();
+  triggerCooldown(); // ⏳ aktifkan cooldown setiap selesai geser
+}
+
+// 🕒 fungsi cooldown geser
+function triggerCooldown() {
+  canSwipe = false;
+  setTimeout(() => canSwipe = true, 800); // 800ms cooldown
+}
+
+slides.addEventListener('touchstart', start);
+slides.addEventListener('touchmove', move);
+slides.addEventListener('touchend', end);
+slides.addEventListener('mousedown', start);
+slides.addEventListener('mousemove', move);
+slides.addEventListener('mouseup', end);
+slides.addEventListener('mouseleave', end);
+
+window.addEventListener('resize', () => setPosition(false));
+setPosition();
+handleMusic();
+
+// 🖱️ Klik ikon buat manual play/pause
+musicIcon.addEventListener('click', () => {
+  if (music.paused) {
+    music.play();
+    fadeAudio(0.6);
+    musicIcon.style.opacity = "1";
+  } else {
+    fadeAudio(0);
+    setTimeout(() => music.pause(), 600);
+    musicIcon.style.opacity = "0.5";
+  }
+});
+</script>
+{% include related.html %}
+</body>
+</html>
