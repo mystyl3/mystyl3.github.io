@@ -7,8 +7,19 @@ date: 2025-11-01
 lastmod: 2025-11-01T06:00:00+07:00
 ---
 
+<header>
+  <h1>MyStyle.my.id</h1>
+  <p>Tempat cerita, hiburan, dan link menarik setiap hari ✨</p>
+  <nav class="top-nav">
+    <a href="/">Beranda</a>
+    <a href="/tentang">Tentang</a>
+    <a href="/privasi">Privasi</a>
+    <a href="/kontak">Kontak</a>
+  </nav>
+</header>
+
 <div class="grid">
-{% assign featured_posts = site.posts | where: "featured", true %}
+  {% assign featured_posts = site.posts | where: "featured", true %}
   {% for post in featured_posts %}
     <div class="card">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a> / {{ post.date | date: "%d %B %Y" }}</h3>
@@ -24,3 +35,7 @@ lastmod: 2025-11-01T06:00:00+07:00
     </div>
   {% endfor %}
 </div>
+
+<footer>
+  <p>© 2025 MyStyle.my.id — Semua cerita punya kenangan.</p>
+</footer>
