@@ -7,19 +7,15 @@ date: 2025-11-01
 lastmod: 2025-11-01T06:00:00+07:00
 ---
 
-<!-- 🌟 Postingan Unggulan -->
 <div class="grid">
-  {% assign featured_posts = site.posts | where: "featured", true %}
+{% assign featured_posts = site.posts | where: "featured", true %}
   {% for post in featured_posts %}
     <div class="card">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a> / {{ post.date | date: "%d %B %Y" }}</h3>
       <p>{{ post.description }}</p>
     </div>
   {% endfor %}
-</div>
-
-<!-- 📚 Postingan Lain (tanpa yang featured) -->
-<div class="grid">
+  
   {% assign regular_posts = site.posts | where_exp: "post", "post.featured != true" %}
   {% for post in regular_posts %}
     <div class="card">
