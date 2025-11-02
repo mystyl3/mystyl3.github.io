@@ -18,119 +18,125 @@ permalink: /mystory04
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
 
-  body {
-    background:#000;
-    font-family:'Poppins', sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    overflow:hidden;
-  }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-  .slider {
-    position:relative;
-    width:100%;
-    max-width:600px;
-    overflow:hidden;
-    background:#000;
-    border-radius:18px;
-    user-select:none;
-    touch-action:pan-y;
-  }
+body {
+  background: #000;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh; /* ⬅️ GUNAKAN INI, bukan 100vh */
+  overflow: hidden;
+}
 
-  .slides {
-    display:flex;
-    transition:transform 0.4s cubic-bezier(.22,.61,.36,1);
-  }
+.slider {
+  position:relative;
+  width:100%;
+  max-width:600px;
+  overflow:hidden;
+  background:#000;
+  border-radius:18px;
+  user-select:none;
+  touch-action:pan-y;
+}
 
-  .slide {
-    flex:0 0 100%;
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#000;
-  }
+.slides {
+  display:flex;
+  transition:transform 0.4s cubic-bezier(.22,.61,.36,1);
+}
 
-  .slide img {
-    width:100%;
-    height:auto;
-    object-fit:contain;
-    display:block;
-    background:#111;
-  }
+.slide {
+  flex:0 0 100%;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#000;
+}
 
-  .caption {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    color:#fff;
-    font-size:2.1em;
-    opacity: 0.2;
-    font-weight:500;
-    text-align:center;
-    padding:8px 18px;
-    border-radius:20px;
-    background:rgba(0,0,0,1);
-    backdrop-filter:blur(5px);
-  }
+.slide img {
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  display:block;
+  background:#111;
+}
 
-  .dots {
-    position:absolute;
-    bottom:14px;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    gap:6px;
-    z-index:2;
-  }
+.caption {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  color:#fff;
+  font-size:2.1em;
+  opacity:0.2;
+  font-weight:500;
+  text-align:center;
+  padding:8px 18px;
+  border-radius:20px;
+  background:rgba(0,0,0,1);
+  backdrop-filter:blur(5px);
+}
 
-  .dots span {
-    width:8px;
-    height:8px;
-    background:rgba(255,255,255,0.35);
-    border-radius:50%;
-    transition:all .25s ease;
-  }
+.dots {
+  position:absolute;
+  bottom:14px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:6px;
+  z-index:2;
+}
 
-  .dots .active {
-    background:#fff;
-    width:18px;
-    border-radius:10px;
-  }
+.dots span {
+  width:8px;
+  height:8px;
+  background:rgba(255,255,255,0.35);
+  border-radius:50%;
+  transition:all .25s ease;
+}
 
-  .gradient-bottom {
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
-    height:80px;
-    background:linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-  }
+.dots .active {
+  background:#fff;
+  width:18px;
+  border-radius:10px;
+}
 
-  /* 🎧 ikon musik */
-  #musicIcon {
-    position:fixed;
-    top:20px;
-    right:20px;
-    width:40px;
-    height:40px;
-    background:rgba(255,255,255,0.15);
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#fff;
-    font-size:20px;
-    backdrop-filter:blur(4px);
-    cursor:pointer;
-    z-index:10;
-    transition:opacity 0.3s ease;
-  }
+.gradient-bottom {
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:80px;
+  background:linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
 
-  img {
+/* 🎧 ikon musik */
+#musicIcon {
+  position:fixed;
+  top:20px;
+  right:20px;
+  width:40px;
+  height:40px;
+  background:rgba(255,255,255,0.15);
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  font-size:20px;
+  backdrop-filter:blur(4px);
+  cursor:pointer;
+  z-index:10;
+  transition:opacity 0.3s ease;
+}
+
+img {
   -webkit-user-drag: none;
   -webkit-touch-callout: none;
   user-select: none;
