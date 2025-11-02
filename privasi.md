@@ -1,0 +1,65 @@
+---
+layout: default
+title: "Kebijakan Privasi"
+permalink: /privasi
+date: 2025-10-27 06:00:00 +0700
+sitemap: false
+---
+
+# Kebijakan Privasi
+
+**MyStyle.my.id** berkomitmen untuk menjaga privasi pengunjung. Dokumen ini menjelaskan data apa yang kami kumpulkan, bagaimana kami menggunakannya, dan pilihan yang tersedia bagi pengunjung.
+
+## 1. Informasi yang Kami Kumpulkan
+Kami dapat mengumpulkan dan menyimpan informasi berikut:
+- **Informasi yang Anda berikan secara langsung**, misalnya saat menghubungi kami melalui formulir atau email (nama, alamat email, pesan).
+- **Informasi teknis otomatis** yang dikumpulkan saat Anda mengunjungi situs, seperti alamat IP, tipe browser, halaman yang dikunjungi, dan informasi perangkat (dengan tujuan analitik dan pemeliharaan situs).
+- **Cookie dan teknologi serupa** untuk meningkatkan pengalaman pengguna dan tujuan analitik.
+
+## 2. Tujuan Penggunaan Data
+Data yang kami kumpulkan digunakan untuk:
+- Menyediakan, memelihara, dan meningkatkan situs MyStyle.my.id.
+- Menganalisis penggunaan situs agar kami dapat memperbaiki konten dan pengalaman pengguna.
+- Menjawab pertanyaan, komentar, atau permintaan yang Anda kirimkan.
+- Memenuhi kewajiban hukum (jika diperlukan).
+
+## 3. Cookie dan Pelacakan
+Situs ini menggunakan cookie dan teknologi serupa untuk:
+- Mengingat preferensi pengunjung.
+- Mengumpulkan data analitik tentang kunjungan agar kami memahami halaman mana yang populer dan bagaimana pengunjung menavigasi situs.
+
+Anda dapat menonaktifkan cookie melalui pengaturan browser Anda — namun beberapa fitur situs mungkin tidak berfungsi optimal jika cookie dimatikan.
+
+## 4. Layanan Pihak Ketiga
+Kami mungkin menggunakan layanan pihak ketiga untuk analitik, hosting, atau layanan lain (mis. Google Analytics, layanan hosting). Layanan tersebut dapat mengumpulkan informasi tentang kunjungan Anda dan memiliki kebijakan privasi sendiri. Kami menyarankan Anda membaca kebijakan privasi penyedia layanan tersebut.
+
+> Catatan: Jika kami menggunakan layanan seperti Google Analytics, data yang dikumpulkan bersifat agregat dan digunakan hanya untuk tujuan analitik.
+
+## 5. Pengungkapan kepada Pihak Ketiga
+Kami tidak akan menjual, memperdagangkan, atau menyewakan informasi pribadi Anda kepada pihak ketiga. Kami hanya dapat mengungkapkan data jika:
+- Diperlukan untuk menyediakan layanan yang Anda minta (mis. layanan pihak ketiga yang kami gunakan), atau
+- Ditetapkan oleh hukum, atau untuk menegakkan ketentuan penggunaan kami.
+
+## 6. Keamanan Data
+Kami menjaga data dengan langkah-langkah keamanan teknis dan organisasi yang wajar untuk mencegah kehilangan, penyalahgunaan, atau akses tidak sah. Namun, tidak ada metode transmisi lewat internet yang 100% aman — jadi kami tidak bisa menjamin keamanan mutlak.
+
+## 7. Link ke Situs Lain
+MyStyle.my.id dapat berisi link ke situs lain yang tidak kami kendalikan. Kami tidak bertanggung jawab atas praktik privasi situs pihak ketiga tersebut. Silakan baca kebijakan privasi tiap situs yang Anda kunjungi.
+
+## 8. Hak Pengunjung
+Jika Anda ingin:
+- Meminta penghapusan data yang Anda berikan, atau
+- Menanyakan data apa yang kami simpan tentang Anda,
+silakan hubungi kami melalui email: **(ganti-ini@example.com)**
+
+Kami akan menanggapi permintaan yang wajar sesuai ketentuan hukum yang berlaku.
+
+## 9. Perubahan Kebijakan Privasi
+Kami dapat memperbarui kebijakan ini dari waktu ke waktu. Perubahan akan dipublikasikan di halaman ini dengan tanggal pembaruan terakhir di bagian atas.
+
+---
+
+**Kontak**  
+Jika ada pertanyaan terkait kebijakan privasi ini, silakan hubungi: **ganti-ini@example.com**
+
+Terima kasih telah mengunjungi **MyStyle.my.id**.
