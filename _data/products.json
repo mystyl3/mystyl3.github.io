@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Kaos MyStyle Premium",
+    "description": "Kaos nyaman dengan desain eksklusif MyStyle.my.id.",
+    "price": "Rp89.000",
+    "image": "https://via.placeholder.com/300x200?text=Kaos+MyStyle",
+    "link": "https://shopee.co.id/produk1"
+  },
+  {
+    "title": "Totebag Stylish",
+    "description": "Tas kain simple tapi keren untuk aktivitas sehari-hari.",
+    "price": "Rp59.000",
+    "image": "https://via.placeholder.com/300x200?text=Totebag+Stylish",
+    "link": "https://shopee.co.id/produk2"
+  },
+  {
+    "title": "Notebook MyStyle",
+    "description": "Cocok buat nulis ide dan catatan harianmu.",
+    "price": "Rp39.000",
+    "image": "https://via.placeholder.com/300x200?text=Notebook",
+    "link": "https://shopee.co.id/produk3"
+  }
+]
