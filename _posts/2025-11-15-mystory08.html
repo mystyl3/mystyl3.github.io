@@ -1,0 +1,238 @@
+---
+layout: none
+title: "MyStory 08"
+description: "Jika kamu bertanya."
+date: 2025-11-15 06:00:00 +0700
+permalink: /mystory08
+---
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  {% include head.html %}
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+
+    #audio-container {
+      margin-top: 20px;
+    }
+
+    #subtitle-container {
+      position: relative;
+      max-width: 90%;
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    #subtitle-text {
+      font-size: 20px;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    #subtitle-img {
+      max-width: 100%;
+      width: 100%
+      height: auto;
+      border-radius: 10px;
+      margin-top: 10px;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      background-color: #fff;
+    }
+
+    .show {
+      opacity: 1 !important;
+    }
+
+    /* Loading screen */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      font-size: 24px;
+      z-index: 9999;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    #loading-progress {
+      width: 80%;
+      max-width: 400px;
+      height: 10px;
+      background: #444;
+      margin-top: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #progress-bar {
+      width: 0%;
+      height: 100%;
+      background: #00ff00;
+      transition: width 0.3s ease-in-out;
+    }
+
+    img {
+      pointer-events: none;
+      user-drag: none;
+      -webkit-user-drag: none;
+    }
+    p,span,h2,div  {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+   }
+  </style>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <p>
+      Memuat... <span id="loading-text">0%</span>
+    </p>
+    <div id="loading-progress">
+      <div id="progress-bar"></div>
+    </div>
+  </div>
+
+  <h2>Jika kamu bertanya...</h2>
+
+  <div id="audio-container">
+    <audio id="audio" controls disabled controlsList="nodownload">
+      <source src="https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div id="subtitle-container">
+    <div id="subtitle-text"></div>
+    <img id="subtitle-img" src="" alt="Subtitle Image">
+    <h5>♥ 💌 ♥</h5>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.getElementById("audio");
+      const subtitleContainer = document.getElementById("subtitle-container");
+      const subtitleText = document.getElementById("subtitle-text");
+      const subtitleImg = document.getElementById("subtitle-img");
+      const loadingScreen = document.getElementById("loading-screen");
+      const loadingText = document.getElementById("loading-text");
+      const progressBar = document.getElementById("progress-bar");
+
+      const subtitles = [
+      //{start: 0, end: 0, text: "", img: "https://github.com/404HTML/for/raw/refs/heads/main/"},
+        { start: 1, end: 2, text: "Jika kamu bertanya...", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_1.webp" },
+        { start: 2, end: 4, text: "Kenapa aku cuma mau sama kamu?", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_2.webp" },
+        { start: 5, end: 6, text: "Jawabannya singkat saja...", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_3.webp" },
+        { start: 7, end: 9, text: "Aku menemukan ketenangan...", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_4.webp" },
+        { start: 9, end: 11, text: "Dan kenyamanan saat bersamamu.", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_5.webp" },
+        { start: 13, end: 16, text: "Pokonya tidak ada alasan untuk pergi.", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_6.webp" },
+        { start: 16, end: 17, text: "Tidak ada alasan...", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_7.webp" },
+        { start: 17, end: 19, text: "Untuk mencari yang lain.", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_8.webp" },
+        { start: 20, end: 22, text: "Aku sudah menemukan semuanya pada dirimu.", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_9.webp" },
+        { start: 23, end: 25, text: "Akan aku habiskan cinta ini untukmu...", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_10.webp" },
+        { start: 26, end: 27, text: "Dan aku akan tetap di sini.", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_11.webp" },
+        { start: 28, end: 29, text: "Apa pun yang terjadi.", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_12.webp" },
+        { start: 30, end: 33, text: "Ingat ya, selama masih ada aku...", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_13.webp" },
+        { start: 33, end: 35, text: "Kamu akan selalu punya seseorang...", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_14.webp" },
+        { start: 35, end: 38, text: "Yang akan terus mencintai dan bangga punya kamu.", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_15.webp" },
+        { start: 40, end: 42, text: "Aku sayang banget sama kamu.", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_16.webp" },
+        { start: 43, end: 44, text: "Tolong, jangan pernah pergi.", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_17.webp" },
+        { start: 45, end: 47, text: "Semoga kita selalu bersama, selamanya.", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_18.webp" },
+        { start: 48, end: 49, text: "Semoga kita...", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_19.webp" },
+        { start: 50, end: 51, text: "Tidak pernah...", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_20.webp" },
+        { start: 51, end: 53, text: "Bosan untuk saling memperjuangkan satu sama lain.", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_21.webp" },
+        { start: 54, end: 56, text: "Tetap saling membahagiakan, ya sayang...", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_22.webp" },
+        { start: 58, end: 60, text: "Mau kan?", img: "https://github.com/404HTML/for/raw/refs/heads/main/jika_kamu_bertanya_23.webp" },
+      ];
+
+      let loaded = 0;
+      const totalFiles = subtitles.length + 1;
+
+      const updateProgress = () => {
+        loaded++;
+        let percent = Math.floor((loaded / totalFiles) * 100);
+        loadingText.textContent = percent + "%";
+        progressBar.style.width = percent + "%";
+
+        if (loaded === totalFiles) {
+          setTimeout(() => {
+            loadingScreen.style.opacity = "0";
+            setTimeout(() => loadingScreen.style.display = "none", 500);
+            audio.removeAttribute("disabled");
+          }, 500);
+        }
+      };
+
+      // Preload images
+      subtitles.forEach(sub => {
+        let img = new Image();
+        img.src = sub.img;
+        img.onload = updateProgress;
+        img.onerror = updateProgress;
+      });
+
+      // Preload audio
+      audio.addEventListener("canplaythrough", updateProgress);
+      audio.addEventListener("error", updateProgress);
+
+      audio.addEventListener("timeupdate", function () {
+        let currentTime = audio.currentTime;
+        let currentSubtitle = subtitles.find(sub => currentTime >= sub.start && currentTime <= sub.end);
+        if (currentSubtitle) {
+          if (subtitleImg.src !== currentSubtitle.img) {
+            setTimeout(() => {
+              subtitleText.textContent = currentSubtitle.text;
+              subtitleContainer.classList.add("show");
+              subtitleText.classList.add("show");
+              subtitleImg.src = currentSubtitle.img;
+              subtitleImg.style.display = "block";
+              subtitleImg.classList.add("show");
+            }, 49);
+          }
+        } else {
+          subtitleContainer.classList.remove("show");
+          subtitleText.classList.remove("show");
+          subtitleImg.classList.remove("show");
+        }
+      });
+    });
+
+    document.addEventListener("contextmenu", function(event) {
+    event.preventDefault(); 
+  });
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "F12" || 
+        (event.ctrlKey && event.shiftKey && event.key === "I")) {
+      event.preventDefault();
+    }
+  });
+  </script>
+
+</body>
+</html>
